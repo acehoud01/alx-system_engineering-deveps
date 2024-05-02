@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory with names truncated after the first dash.
+
+for file in *; do
+    if [[ ! $file == .* ]]; then
+        truncated_name=$(echo "$file" | cut -d '-' -f 2-)
+        echo "$truncated_name"
+    fi
+done
